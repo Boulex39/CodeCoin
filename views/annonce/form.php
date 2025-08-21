@@ -1,40 +1,63 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Nouvelle annonce - CodeCoin</title>
-  <link rel="stylesheet" href="../public/css/style.css">
-</head>
-<body>
-  <header>
-    <h2>CodeCoin</h2>
-  </header>
+<?php
+$title = "Nouvelle annonce - CodeCoin";
+ob_start();
+?>
 
-  <h1>Déposer une annonce</h1>
+<header class="main-header">
+  <a href="/CodeCoin/" class="logo">Code<span>Coin</span></a>
+</header>
 
-  <form method="post" action="#">
-    <label>Titre de l’annonce</label><br>
-    <input type="text" name="title"><br><br>
+<main>
+  <div class="form-card">
+    <h2>Déposer une annonce</h2>
 
-    <label>Texte de l’annonce</label><br>
-    <textarea name="description"></textarea><br><br>
+    <?php if (!empty($_SESSION['error'])): ?>
+      <p class="message error"><?= $_SESSION['error'];
+                                unset($_SESSION['error']); ?></p>
+    <?php endif; ?>
 
-    <label>Prix</label><br>
-    <input type="number" name="price"><br><br>
+    <?php if (!empty($_SESSION['success'])): ?>
+      <p class="message success"><?= $_SESSION['success'];
+                                  unset($_SESSION['success']); ?></p>
+    <?php endif; ?>
 
-    <label>Catégorie</label><br>
-    <select name="category">
-      <option>Informatique</option>
-      <option>Maison</option>
-      <option>Véhicules</option>
-      <option>Loisirs</option>
-      <option>Services</option>
-    </select><br><br>
 
-    <label>Photos</label><br>
-    <input type="file" name="photos"><br><br>
+    <form method="POST">
+      <div class="form-group">
+        <label for="titre">Titre</label>
+        <input type="text" id="titre" name="titre" required>
+      </div>
 
-    <button type="submit">Déposer</button>
-  </form>
-</body>
-</html>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="prix">Prix (€)</label>
+        <input type="number" id="prix" name="prix" required>
+      </div>
+
+      <div class="form-group">
+        <label for="categorie_id">Catégorie</label>
+        <select id="categorie_id" name="categorie_id" required>
+          <option value="">-- Choisir --</option>
+          <option value="1">Immobilier</option>
+          <option value="2">Véhicules</option>
+          <option value="3">Informatique</option>
+          <option value="4">Emploi</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-orange full">Publier</button>
+    </form>
+  </div>
+</main>
+
+<footer class="main-footer">
+  <p>&copy; <?= date('Y') ?> CodeCoin - Tous droits réservés</p>
+</footer>
+
+<?php
+$content = ob_get_clean();
+require_once __DIR__ . '/../base-html.php';

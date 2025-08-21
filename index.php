@@ -21,6 +21,10 @@ $router->map('GET|POST', '/connexion', 'ControllerAuth#connexion', 'connexion');
 $router->map('GET|POST', '/inscription', 'ControllerAuth#inscription', 'inscription');
 // Page de déconnexion
 $router->map('GET', '/deconnexion', 'ControllerAuth#deconnexion', 'deconnexion');
+// Page de création d'annonce
+$router->map('GET|POST', '/annonce/nouvelle', 'ControllerAnnonce#creerAnnonce', 'annonce_creer');
+// Page détail d'une annonce
+$router->map('GET', '/annonce/[i:id]', 'ControllerAnnonce#AnnoncePage', 'annonce_detail');
 
 
 // --- Matching ---

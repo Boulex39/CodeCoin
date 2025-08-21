@@ -10,7 +10,15 @@ ob_start();
 <header class="main-header">
     <a href="/CodeCoin/" class="logo">Code<span>Coin</span></a>
     <div class="header-right">
-        <button class="btn-orange">Déposer une annonce</button>
+
+        <?php if (!empty($_SESSION['user'])): ?>
+            <!-- Si l’utilisateur est connecté -->
+            <a href="/CodeCoin/annonce/nouvelle" class="btn-orange">Déposer une annonce</a>
+        <?php else: ?>
+            <!-- Si l’utilisateur n’est PAS connecté -->
+            <a href="/CodeCoin/connexion" class="btn-orange">Déposer une annonce</a>
+        <?php endif; ?>
+
         <div class="search-bar">
             <input type="text" placeholder="Rechercher sur CodeCoin">
             <button>🔍</button>
@@ -26,6 +34,7 @@ ob_start();
         <?php endif; ?>
     </div>
 </header>
+
 
 <nav class="categories">
     <a href="/?categorie=Immobilier">Immobilier</a>
@@ -43,7 +52,8 @@ ob_start();
                 <p><?= $annonce->getDescription() ?></p>
                 <p><?= $annonce->getPrix() ?> €</p>
                 <p>Catégorie : <?= $annonce->getCategorie_nom() ?></p>
-                <p><a href="annonce/<?= $annonce->getId() ?>">Voir l'annonce</a></p>
+                <p>Posté par : <?= $annonce->getPseudo() ?></p>
+                <p><a href="/CodeCoin/annonce/<?= $annonce->getId() ?>">Voir l'annonce</a></p>
                 <small>Ajoutée le <?= $annonce->getCreated_at()->format('d/m/Y') ?></small>
             </div>
         <?php

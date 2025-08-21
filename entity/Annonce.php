@@ -8,6 +8,7 @@ class Annonce{
    private int $categorie_id;
    private int $user_id;
    private string $categorie_nom;
+   private string $pseudo;
 //    private $image;
    private DateTimeImmutable $created_at;  
 
@@ -92,6 +93,14 @@ class Annonce{
     // public function setImage(string $image): void {
     //     $this->image = $image;
     // }
+
+    public function getPseudo(): string {
+    return $this->pseudo;
+    }
+
+    public function setPseudo(string $pseudo): void {
+    $this->pseudo = $pseudo;
+    }
 
     public function getCreated_at(): DateTimeImmutable {
     return $this->created_at;

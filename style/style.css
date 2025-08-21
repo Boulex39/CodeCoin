@@ -194,7 +194,7 @@ body {
 }
 
 .message.error { color: red; }
-.message.success { color: green; }
+.message.success { color: green; font-weight: bold; margin-bottom: 15px;}
 
 .link {
   text-align: center;
