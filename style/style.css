@@ -1,0 +1,203 @@
+/* RESET DE BASE */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #E25600;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo span {
+  color: #333; /* "Coin" en gris foncé */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  border: none;
+  padding: 8px;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 6px;
+  background: #fff;
+  color: #444;
+  border: none;
+  border: 2px solid #ccc;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-orange {
+  background: white;
+  color: #E25600;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* NAV CATEGORIES */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: white;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 800px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.categories a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.categories a:hover {
+  background: #E25600;
+  color: white;
+}
+
+/* ANNONCES */
+.annonces {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.annonce {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.annonce-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* pour que l'image remplisse bien */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.annonce h2 {
+  color: #E25600;
+}
+
+/* FOOTER */
+.main-footer {
+  background: #E25600;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto; /* pousse le footer en bas */
+}
+
+/* FORMULAIRES (Connexion / Inscription) */
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #E25600;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-orange.full {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.message.error { color: red; }
+.message.success { color: green; }
+
+.link {
+  text-align: center;
+  margin-top: 15px;
+}
+
