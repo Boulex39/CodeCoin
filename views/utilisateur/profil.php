@@ -27,7 +27,7 @@ ob_start();
                     <p><strong><?= $annonce->getPrix() ?> €</strong></p>
                     <p>Catégorie : <?= $annonce->getCategorie_nom() ?></p>
                     <small>Ajoutée le <?= $annonce->getCreated_at()->format('d/m/Y') ?></small>
-                    
+
                     <!-- Actions -->
                     <p>
                         <a href="/CodeCoin/annonce/<?= $annonce->getId() ?>">Voir</a> |

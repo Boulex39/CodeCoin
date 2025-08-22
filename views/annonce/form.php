@@ -10,18 +10,6 @@ ob_start();
 <main>
   <div class="form-card">
     <h2>Déposer une annonce</h2>
-
-    <?php if (!empty($_SESSION['error'])): ?>
-      <p class="message error"><?= $_SESSION['error'];
-                                unset($_SESSION['error']); ?></p>
-    <?php endif; ?>
-
-    <?php if (!empty($_SESSION['success'])): ?>
-      <p class="message success"><?= $_SESSION['success'];
-                                  unset($_SESSION['success']); ?></p>
-    <?php endif; ?>
-
-
     <form method="POST">
       <div class="form-group">
         <label for="titre">Titre</label>

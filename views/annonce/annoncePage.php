@@ -20,6 +20,10 @@ ob_start();
     </div>
 </main>
 
+<footer class="main-footer">
+  <p>&copy; <?= date('Y') ?> CodeCoin - Tous droits réservés</p>
+</footer>
+
 <?php
 $content = ob_get_clean();
 require_once __DIR__ . '/../base-html.php';

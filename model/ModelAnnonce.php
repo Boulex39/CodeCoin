@@ -99,4 +99,33 @@ class ModelAnnonce extends Model
         }
         return $arrayAnnonces;
     }
+
+    public function deleteAnnonceById(int $id, int $user_id): bool
+    {
+        $sql = "DELETE FROM annonce WHERE id = :id AND user_id = :user_id";
+        $stmt = $this->getDb()->prepare($sql);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }
+
+
+    public function updateAnnonceById(int $id, string $titre, string $description, float $prix, int $categorie_id): bool
+    {
+        $sql = "UPDATE annonce SET titre = :titre, description = :description, prix = :prix, categorie_id = :categorie_id
+        WHERE id = :id AND user_id = :user_id";
+
+        $stmt = $this->getDb()->prepare($sql);
+
+        return $stmt->execute([
+            ':titre' => $titre,
+            ':description' => $description,
+            ':prix' => $prix,
+            ':categorie_id' => $categorie_id,
+            ':id' => $id,
+            ':user_id' => $_SESSION['user']['id'] // Sécurité : seul le proprio peut modif
+        ]);
+    }
 }

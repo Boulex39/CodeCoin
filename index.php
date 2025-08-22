@@ -27,6 +27,10 @@ $router->map('GET|POST', '/annonce/nouvelle', 'ControllerAnnonce#creerAnnonce', 
 $router->map('GET', '/annonce/[i:id]', 'ControllerAnnonce#AnnoncePage', 'annonce_detail');
 // Page profil
 $router->map('GET', '/profil', 'ControllerUtilisateur#profil', 'profil');
+// Page edit
+$router->map('GET|POST', '/annonce/[i:id]/edit', 'ControllerAnnonce#modifierAnnonce', 'annonce_modifier');
+// Supprimer annonce
+$router->map('GET', '/annonce/[i:id]/delete', 'ControllerAnnonce#supprimerAnnonce', 'annonce_supprimer');
 
 
 // --- Matching ---
