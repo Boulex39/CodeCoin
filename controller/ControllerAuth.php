@@ -62,7 +62,8 @@ class ControllerAuth
                 $_SESSION['user'] = [
                     'id' => $utilisateur->getId(),
                     'pseudo' => $utilisateur->getPseudo(),
-                    'email' => $utilisateur->getEmail()
+                    'email' => $utilisateur->getEmail(),
+                    'created_at' => $utilisateur->getCreated_at()->format('Y-m-d H:i:s') 
                 ];
 
                 $_SESSION['success'] = "Connexion réussie !";

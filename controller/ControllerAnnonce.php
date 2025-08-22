@@ -59,4 +59,5 @@ class ControllerAnnonce
 
         require __DIR__ . '/../views/annonce/annoncePage.php';
     }
+
 }

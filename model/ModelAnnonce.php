@@ -20,6 +20,7 @@ class ModelAnnonce extends Model
         return $arrayAnnonces;
     }
 
+
     public function getAnnonceById(int $id): ?Annonce
     {
         $sql = "SELECT a.id, a.titre, a.description, a.prix, a.created_at, a.user_id, 
@@ -39,6 +40,7 @@ class ModelAnnonce extends Model
         }
         return null;
     }
+
 
     public function getAnnoncesByCategorieId(int $categorie_id): array
     {
@@ -61,6 +63,7 @@ class ModelAnnonce extends Model
         return $arrayAnnonces;
     }
 
+
     public function createAnnonce($titre, $description, $prix, $categorie_id, $user_id)
     {
         $sql = "INSERT INTO annonce (titre, description, prix, categorie_id, user_id, created_at)
@@ -76,5 +79,24 @@ class ModelAnnonce extends Model
         ]);
     }
 
-    
+
+    public function getAnnoncesByUserId(int $user_id): array
+    {
+        $sql = "SELECT a.id, a.titre, a.description, a.prix, a.created_at, a.user_id, a.categorie_id,
+                        c.nom AS categorie_nom, u.pseudo
+                FROM annonce a
+                JOIN categorie c ON a.categorie_id = c.id
+                JOIN utilisateur u ON a.user_id = u.id
+                WHERE a.user_id = :user_id
+                ORDER  BY a.created_at DESC";
+        $query = $this->getDb()->prepare($sql);
+        $query->bindvalue(':user_id', $user_id, PDO::PARAM_INT);
+        $query->execute();
+
+        $arrayAnnonces = [];
+        while ($annonce = $query->fetch(PDO::FETCH_ASSOC)) {
+            $arrayAnnonces[] = new Annonce($annonce);
+        }
+        return $arrayAnnonces;
+    }
 }

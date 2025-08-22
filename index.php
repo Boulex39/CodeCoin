@@ -25,6 +25,8 @@ $router->map('GET', '/deconnexion', 'ControllerAuth#deconnexion', 'deconnexion')
 $router->map('GET|POST', '/annonce/nouvelle', 'ControllerAnnonce#creerAnnonce', 'annonce_creer');
 // Page détail d'une annonce
 $router->map('GET', '/annonce/[i:id]', 'ControllerAnnonce#AnnoncePage', 'annonce_detail');
+// Page profil
+$router->map('GET', '/profil', 'ControllerUtilisateur#profil', 'profil');
 
 
 // --- Matching ---
