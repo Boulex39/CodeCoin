@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./CodeCoin/style/style.css"> -->
     <link rel="stylesheet" href="/CodeCoin/style/style.css?v=<?= time() ?>">
-
+    <script src="/CodeCoin/style/script.js?v=<?= time() ?>"></script>
     <title><?= $title ?? 'CodeCoin' ?></title>
 </head>
 
@@ -29,5 +29,7 @@
         <?php unset($_SESSION['error']); ?>
     <?php endif; ?>
 
+    <script src="/CodeCoin/style/script.js?v=<?= time() ?>"></script>
 </body>
+
 </html>

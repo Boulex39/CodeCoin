@@ -12,13 +12,13 @@ ob_start();
 
     <form action="" method="POST">
         <label for="titre">Titre</label>
-        <input type="text" id="titre" name="titre" value="<?= htmlspecialchars($annonce->getTitre()) ?>" required>
+        <input type="text" id="titre" name="titre" value="<?= $annonce->getTitre() ?>" required>
 
         <label for="description">Description</label>
-        <textarea id="description" name="description" required><?= htmlspecialchars($annonce->getDescription()) ?></textarea>
+        <textarea id="description" name="description" required><?= $annonce->getDescription() ?></textarea>
 
         <label for="prix">Prix (€)</label>
-        <input type="number" id="prix" name="prix" step="0.01" value="<?= htmlspecialchars($annonce->getPrix()) ?>" required>
+        <input type="number" id="prix" name="prix" step="0.01" value="<?= $annonce->getPrix() ?>" required>
 
         <label for="categorie_id">Catégorie</label>
         <select id="categorie_id" name="categorie_id" required>

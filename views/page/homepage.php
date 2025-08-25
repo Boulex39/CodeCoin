@@ -20,7 +20,7 @@ ob_start();
         <?php endif; ?>
 
         <div class="search-bar">
-            <input type="text" placeholder="Rechercher sur CodeCoin">
+            <input type="text" id="searchInput" placeholder="Rechercher sur CodeCoin">
             <button>🔍</button>
         </div>
 
@@ -37,10 +37,10 @@ ob_start();
 
 
 <nav class="categories">
-    <a href="/?categorie=Immobilier">Immobilier</a>
-    <a href="/?categorie=Véhicules">Véhicules</a>
-    <a href="/?categorie=Informatique">Informatique</a>
-    <a href="/?categorie=Emploi">Emploi</a>
+    <a href="#" data-cat="immobilier">Immobilier</a>
+    <a href="#" data-cat="véhicules">Véhicules</a>
+    <a href="#" data-cat="informatique">Informatique</a>
+    <a href="#" data-cat="emploi">Emploi</a>
 </nav>
 
 
@@ -51,7 +51,7 @@ ob_start();
                 <h2><?= $annonce->getTitre() ?></h2>
                 <p><?= $annonce->getDescription() ?></p>
                 <p><?= $annonce->getPrix() ?> €</p>
-                <p>Catégorie : <?= $annonce->getCategorie_nom() ?></p>
+                <p class="categorie"><?= $annonce->getCategorie_nom() ?></p>
                 <p>Posté par : <?= $annonce->getPseudo() ?></p>
                 <p><a href="/CodeCoin/annonce/<?= $annonce->getId() ?>">Voir l'annonce</a></p>
                 <small>Ajoutée le <?= $annonce->getCreated_at()->format('d/m/Y') ?></small>
