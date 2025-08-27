@@ -137,6 +137,342 @@ body {
   color: #E25600;
 }
 
+  /* ===== Styles pour la page détail d'annonce ===== */
+/* ===== Page détail annonce ===== */
+body.annonce-page main {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    min-height: 30vh;
+}
+
+body.annonce-page .annonce-detail {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+body.annonce-page .annonce-detail h1 {
+    color: #E25600;
+    margin-bottom: 20px;
+}
+
+body.annonce-page .annonce-detail p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #333;
+}
+
+body.annonce-page .annonce-detail p small {
+    display: block;
+    color: #777;
+    margin-top: 10px;
+}
+
+body.annonce-page .annonce-detail a.btn-orange {
+    display: inline-block;
+    margin-top: 20px;
+    background: #E25600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+body.annonce-page .annonce-detail a.btn-orange:hover {
+    background: #c13d00;
+}
+
+.annonce-detail .annonce-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+}
+
+.annonce-detail .btn-back {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px; 
+    transition: background 0.3s;
+}
+
+.annonce-detail .annonce-buttons a {
+    display: inline-block;
+    /* padding: 12px 20px; */
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.annonce-detail .annonce-buttons a:hover {
+    transform: translateY(-2px);
+}
+
+/* Style bouton orange */
+.annonce-detail .btn-orange {
+    background: #E25600;
+    color: #fff;
+}
+
+/* Style bouton gris */
+.annonce-detail .btn-back:hover {
+    background: #222;
+    color: #fff;
+}
+
+
+/* ===== Styles pour la page Profil ===== */
+body.profil-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centre le contenu horizontalement */
+    padding: 40px 20px;
+    gap: 40px; /* espace entre carte profil et annonces */
+    min-height: 80vh;
+}
+
+/* Carte profil */
+body.profil-page .profil-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+body.profil-page .profil-card h2 {
+    color: #E25600;
+    margin-bottom: 20px;
+}
+
+body.profil-page .profil-card a.btn-back {
+    display: inline-block;
+    margin-top: 15px;
+    background: #E25600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+body.profil-page .profil-card a.btn-back:hover {
+    background: #c13d00;
+}
+
+/* Section Mes annonces */
+body.profil-page .mes-annonces {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+body.profil-page .mes-annonces h2 {
+    color: #E25600;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* La grille ne s’applique qu’aux annonces */
+body.profil-page .mes-annonces .annonces-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px)); /* colonnes fixes */
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cartes annonces */
+body.profil-page .mes-annonces .annonce {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+    align-items: center;
+    text-align: center;
+}
+
+body.profil-page .mes-annonces .annonce:hover {
+    transform: translateY(-3px);
+}
+
+/* Titres et textes */
+body.profil-page .mes-annonces .annonce h3 {
+    color: #E25600;
+    margin-bottom: 10px;
+}
+
+body.profil-page .mes-annonces .annonce p,
+body.profil-page .mes-annonces .annonce small {
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Liens actions */
+body.profil-page .mes-annonces .annonce a {
+    color: #E25600;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+body.profil-page .mes-annonces .annonce a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== Styles spécifiques à la page Modifier une annonce ===== */
+body.edit-page main {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: flex-start; /* laisse un peu d'espace en haut */
+    min-height: 80vh;        /* espace suffisant pour la carte */
+    padding: 40px 20px;
+}
+
+body.edit-page .form-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: white;
+}
+
+body.edit-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #E25600;
+    font-size: 1.8rem;
+}
+
+body.edit-page form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+body.edit-page form input,
+body.edit-page form select,
+body.edit-page form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+body.edit-page form textarea {
+    height: 120px;         /* hauteur fixe */
+    resize: none;          /* interdit l’agrandissement */
+    overflow-y: auto;      /* scroll vertical si nécessaire */
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+body.edit-page form button {
+    width: 100%;
+    padding: 12px;
+    background: #E25600;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+body.edit-page form button:hover {
+    background: #c13d00;
+}
+
+/* Bouton retour au profil spécifique à la page edit */
+body.edit-page .btn-back {
+    display: inline-block;
+    background: #E25600;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+body.edit-page .btn-back:hover {
+    background: #c13d00;
+}
+
+/* Bouton retour spécifique à la page edit */
+body.edit-page .btn-back {
+    display: inline-block;
+    background: #E25600;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+body.edit-page .btn-back:hover {
+    background: #c13d00;
+}
+
+/* Conteneur des boutons retour */
+body.edit-page .back-buttons {
+    display: flex;
+    justify-content: space-between; /* côte à côte */
+    margin-top: 15px;
+    gap: 10px; /* espace entre les boutons */
+}
+
+body.edit-page .btn-back {
+    flex: 1; /* prend tout l'espace disponible */
+    text-align: center;
+    background: #E25600;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+body.edit-page .btn-back:hover {
+    background: #c13d00;
+}
+
+
+
 /* FOOTER */
 .main-footer {
   background: #E25600;

@@ -26,7 +26,7 @@ ob_start();
 
         <?php if (!empty($_SESSION['user'])): ?>
             <a href="/CodeCoin/profil" class="login-link">
-                👤 Bonjour, <?= htmlspecialchars($_SESSION['user']['pseudo']) ?>
+                👤 Bonjour, <?= $_SESSION['user']['pseudo'] ?>
             </a>
             <a href="/CodeCoin/deconnexion" class="btn-orange">Déconnexion</a>
         <?php else: ?>
@@ -37,8 +37,9 @@ ob_start();
 
 
 <nav class="categories">
+    <a href="#" data-cat="tout">Tout</a>
     <a href="#" data-cat="immobilier">Immobilier</a>
-    <a href="#" data-cat="véhicules">Véhicules</a>
+    <a href="#" data-cat="véhicule">Véhicule</a>
     <a href="#" data-cat="informatique">Informatique</a>
     <a href="#" data-cat="emploi">Emploi</a>
 </nav>

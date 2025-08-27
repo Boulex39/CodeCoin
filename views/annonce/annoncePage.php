@@ -1,5 +1,7 @@
 <?php
 $title = "Annonce - " . $annonce->getTitre();
+$bodyClass = 'annonce-page';
+
 ob_start();
 ?>
 
@@ -16,12 +18,18 @@ ob_start();
         <p><strong>Posté par :</strong> <?= $annonce->getPseudo() ?></p>
         <p><small>Ajoutée le <?= $annonce->getCreated_at()->format('d/m/Y H:i') ?></small></p>
 
-        <a href="/CodeCoin/" class="btn-orange">⬅ Retour aux annonces</a>
+        <!-- Boutons de retour -->
+        <div class="annonce-buttons">
+            <a href="/CodeCoin/" class="btn-orange">⬅ Retour aux annonces</a>
+            <?php if (isset($_SESSION['user'])): ?>
+                <a href="/CodeCoin/profil" class="btn-back">⬅ Retour à mon profil</a>
+            <?php endif; ?>
+        </div>
     </div>
 </main>
 
 <footer class="main-footer">
-  <p>&copy; <?= date('Y') ?> CodeCoin - Tous droits réservés</p>
+    <p>&copy; <?= date('Y') ?> CodeCoin - Tous droits réservés</p>
 </footer>
 
 <?php

@@ -17,13 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
         cat.addEventListener("click", function (e) {
             e.preventDefault();
             let filtre = this.dataset.cat.toLowerCase();
+
             annonces.forEach(annonce => {
                 let catAnnonce = annonce.querySelector(".categorie").textContent.toLowerCase();
-                annonce.style.display = catAnnonce.includes(filtre) ? "block" : "none";
+
+                // Si "tout", on affiche toutes les annonces
+                if (filtre === "tout") {
+                    annonce.style.display = "block";
+                } else {
+                    annonce.style.display = catAnnonce.includes(filtre) ? "block" : "none";
+                }
             });
         });
     });
 });
+
 
 
 

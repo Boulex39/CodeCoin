@@ -10,7 +10,7 @@
     <title><?= $title ?? 'CodeCoin' ?></title>
 </head>
 
-<body>
+<body class="<?= isset($bodyClass) ? $bodyClass : '' ?>">
     <!-- si la variable $content existe, on affiche ?? sinon on affiche ce qu'il y a dans '' -->
     <?= $content ?? 'Pas de contenu' ?>
 
