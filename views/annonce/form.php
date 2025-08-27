@@ -1,5 +1,6 @@
 <?php
 $title = "Nouvelle annonce - CodeCoin";
+$bodyClass = "nouvelle-annonce";
 ob_start();
 ?>
 
